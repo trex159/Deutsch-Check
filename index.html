@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Deutsch-Check</title>
+  <link rel="icon" type="image/svg+xml" href="files/logo.svg">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="header-content">
+        <div class="logo">
+          <img src="files/logo.svg" alt="Deutsch-Check Logo" width="82" height="82">
+          <div>
+            <h1>Deutsch-Check</h1>
+            <p>Teste dein Wissen zu Sprache und Textsorten</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <div class="intro">
+        <h2>Teste dein Sprachwissen</h2>
+        <p>Beantworte 15 Fragen zu Stilmitteln, Sprachanalyse, Fremdwörtern und Textsorten (Kommentar & Reportage). Du bekommst direktes Feedback.</p>
+      </div>
+
+      <div id="quiz-progress" class="quiz-progress"></div>
+      <div id="quiz-container" class="quiz-container"></div>
+      <div id="results-container" class="results-container"></div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; <span id="current-year"></span> DeutschCheck – Deutsch für die 9. Klasse (Realschule Bayern)</p>
+    </div>
+  </footer>
+
+  <script src="js/questions.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
