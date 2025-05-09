@@ -179,7 +179,7 @@ const questions = [
     id: 16,
     text: "Was enthält eine Reportage oft zusätzlich zur sachlichen Information?",
     subject: "textsorten",
-    options: ["Witze", "Subjektive Meinung des Autors", "Gefühlsbetonte Erzählungen und Eindrücke", "Tabellarische Daten"],
+    options: ["Witze", "Fiktive Beispiele", "Gefühlsbetonte Erzählungen und Eindrücke", "Tabellarische Daten"],
     correctAnswer: 2,
     explanation: "Neben sachlicher Information bietet die Reportage oft persönliche Eindrücke, Stimmungen und Beobachtungen."
   },
@@ -246,5 +246,202 @@ const questions = [
     options: ["Sie verzichtet auf Stilmittel", "Sie nutzt subjektive Eindrücke zur Veranschaulichung", "Sie enthält keine wörtliche Rede", "Sie ist anonym verfasst"],
     correctAnswer: 1,
     explanation: "Reportagen verwenden oft subjektive Eindrücke und Stilmittel, um lebendige Bilder beim Leser hervorzurufen."
+  },
+  // Stilmittel
+  {
+    id: 26,
+    text: "Welches Stilmittel liegt vor: „Der frühe Vogel fängt den Wurm“?",
+    subject: "stilmittel",
+    options: ["Metapher", "Sprichwort", "Personifikation", "Ironie"],
+    correctAnswer: 1,
+    explanation: "Das ist ein Sprichwort, das eine allgemeine Lebensweisheit ausdrückt."
+  },
+  {
+    id: 27,
+    text: "Was bewirkt eine Anapher?",
+    subject: "stilmittel",
+    options: ["Verstärkung durch Wiederholung", "Spannung durch Gegensatz", "Bildhafte Sprache", "Verkürzung des Satzes"],
+    correctAnswer: 0,
+    explanation: "Eine Anapher wiederholt Wörter am Satzanfang und verstärkt so die Aussage."
+  },
+  {
+    id: 28,
+    text: "Welches Stilmittel liegt vor: „Schwarze Milch der Frühe“?",
+    subject: "stilmittel",
+    options: ["Euphemismus", "Paradoxon", "Oxymoron", "Metapher"],
+    correctAnswer: 2,
+    explanation: "Ein Oxymoron verbindet Gegensätze – wie 'schwarz' und 'Milch'."
+  },
+  {
+    id: 29,
+    text: "Was ist eine Ellipse?",
+    subject: "stilmittel",
+    options: ["Eine Übertreibung", "Ein unvollständiger Satz", "Eine Frage ohne Antwort", "Ein Gleichnis"],
+    correctAnswer: 1,
+    explanation: "Eine Ellipse lässt Satzteile weg, die aber aus dem Kontext verstanden werden."
+  },
+
+  // Wortebene
+  {
+    id: 30,
+    text: "Was ist ein Fachbegriff?",
+    subject: "wortebene",
+    options: ["Ein umgangssprachlicher Ausdruck", "Ein Begriff mit mehreren Bedeutungen", "Ein Begriff aus einem bestimmten Wissensgebiet", "Ein veraltetes Wort"],
+    correctAnswer: 2,
+    explanation: "Fachbegriffe gehören zu speziellen Wissensgebieten, z. B. 'Photosynthese'."
+  },
+  {
+    id: 31,
+    text: "Was bedeutet 'konnotiert'?",
+    subject: "wortebene",
+    options: ["Neutral", "Zusätzlich mit Bedeutung versehen", "Zufällig gewählt", "Falsch verwendet"],
+    correctAnswer: 1,
+    explanation: "Ein Wort ist konnotiert, wenn es neben der Hauptbedeutung noch eine Nebenbedeutung hat."
+  },
+  {
+    id: 32,
+    text: "Was ist ein Synonym für 'schön'?",
+    subject: "wortebene",
+    options: ["hässlich", "ansehnlich", "laut", "dunkel"],
+    correctAnswer: 1,
+    explanation: "'Ansehnlich' ist ein Synonym für 'schön'."
+  },
+  {
+    id: 33,
+    text: "Was ist ein Neologismus?",
+    subject: "wortebene",
+    options: ["Eine Wortneuschöpfung", "Ein veralteter Begriff", "Ein wissenschaftlicher Ausdruck", "Ein Zitat"],
+    correctAnswer: 0,
+    explanation: "Neologismen sind neue Wörter wie 'Klimakleber' oder 'Coronaparty'."
+  },
+
+  // Satzebene
+  {
+    id: 34,
+    text: "Was ist ein Satzgefüge?",
+    subject: "satzebene",
+    options: ["Ein Satz ohne Verb", "Ein einfacher Hauptsatz", "Ein zusammengesetzter Satz aus Haupt- und Nebensatz", "Eine Satzreihe aus drei Hauptsätzen"],
+    correctAnswer: 2,
+    explanation: "Ein Satzgefüge besteht aus mindestens einem Haupt- und einem Nebensatz."
+  },
+  {
+    id: 35,
+    text: "Welcher Satz ist eine Satzreihe?",
+    subject: "satzebene",
+    options: ["Ich kam, sah und siegte.", "Weil ich müde war, schlief ich.", "Dass du kommst, freut mich.", "Wenn du willst, bleib hier."],
+    correctAnswer: 0,
+    explanation: "Drei Hauptsätze werden durch Kommata verbunden: das ist eine Satzreihe."
+  },
+  {
+    id: 36,
+    text: "Was ist ein einfacher Hauptsatz?",
+    subject: "satzebene",
+    options: ["Wir gingen nach Hause.", "Wenn es regnet, bleiben wir drinnen.", "Obwohl sie Hunger hatte, aß sie nichts.", "Der Hund, der bellte, war klein."],
+    correctAnswer: 0,
+    explanation: "'Wir gingen nach Hause.' ist ein einfacher Hauptsatz – Subjekt + Prädikat."
+  },
+
+  // Textebene
+  {
+    id: 37,
+    text: "Was gehört zur Analyse auf Textebene?",
+    subject: "textebene",
+    options: ["Satzglieder bestimmen", "Erzählperspektive analysieren", "Wortarten bestimmen", "Rechtschreibung prüfen"],
+    correctAnswer: 1,
+    explanation: "Zur Textebene gehört u. a. die Erzählperspektive (Ich-Erzähler, auktorial etc.)."
+  },
+  {
+    id: 38,
+    text: "Was ist eine typische Funktion der Einleitung in einem Text?",
+    subject: "textebene",
+    options: ["Sie enthält die Schlussfolgerung.", "Sie weckt Interesse und stellt das Thema vor.", "Sie bringt die Hauptargumente.", "Sie erklärt Fachbegriffe."],
+    correctAnswer: 1,
+    explanation: "Die Einleitung soll das Interesse wecken und ins Thema einführen."
+  },
+  {
+    id: 39,
+    text: "Was versteht man unter einem Spannungsbogen?",
+    subject: "textebene",
+    options: ["Ein Fachbegriff aus der Physik", "Eine Zusammenfassung", "Die dramatische Struktur eines Textes", "Ein Diagramm"],
+    correctAnswer: 2,
+    explanation: "Ein Spannungsbogen beschreibt, wie Spannung in einem Text aufgebaut und gelöst wird."
+  },
+
+  // Fremdwörter
+  {
+    id: 40,
+    text: "Was bedeutet 'These'?",
+    subject: "fremdwoerter",
+    options: ["Ein Beweis", "Eine Behauptung", "Ein Argument", "Ein Zitat"],
+    correctAnswer: 1,
+    explanation: "Eine These ist eine Behauptung, die im Text begründet oder widerlegt wird."
+  },
+  {
+    id: 41,
+    text: "Was bedeutet 'Interpretation'?",
+    subject: "fremdwoerter",
+    options: ["Ein Zitat", "Ein Inhaltsverzeichnis", "Eine Deutung eines Textes", "Ein Rechtsbegriff"],
+    correctAnswer: 2,
+    explanation: "Eine Interpretation ist die inhaltliche Deutung eines Textes."
+  },
+  {
+    id: 42,
+    text: "Was bedeutet 'Protagonist'?",
+    subject: "fremdwoerter",
+    options: ["Nebenfigur", "Gegenspieler", "Hauptfigur", "Autor"],
+    correctAnswer: 2,
+    explanation: "Der Protagonist ist die Hauptfigur in einer Erzählung oder einem Drama."
+  },
+
+  // Textsorten
+  {
+    id: 43,
+    text: "Welche Textsorte stellt Meinungen dar?",
+    subject: "textsorten",
+    options: ["Kommentar", "Reportage", "Kurzgeschichte", "Erörterung"],
+    correctAnswer: 0,
+    explanation: "Ein Kommentar enthält persönliche Meinungen und Stellungnahmen."
+  },
+  {
+    id: 44,
+    text: "Welche Aussage trifft auf eine Kurzgeschichte zu?",
+    subject: "textsorten",
+    options: ["Sie hat ein offenes Ende.", "Sie ist meist länger als ein Roman.", "Sie ist eine Nachricht.", "Sie handelt meist von Tieren."],
+    correctAnswer: 0,
+    explanation: "Die Glosse ist eine oft satirische, pointierte Meinungsäußerung."
+  },
+  {
+    id: 45,
+    text: "Was ist typisch für eine Reportage?",
+    subject: "textsorten",
+    options: ["Reine Fakten", "Nur wörtliche Rede", "Erlebnisnahe Beschreibung", "Dialogform"],
+    correctAnswer: 2,
+    explanation: "Reportagen schildern Ereignisse möglichst anschaulich und mit Nähe zum Geschehen."
+  },
+
+  // Kurzgeschichte
+  {
+    id: 46,
+    text: "Was ist typisch für den Anfang einer Kurzgeschichte?",
+    subject: "kurzgeschichte",
+    options: ["Langsame Einführung", "Wissenschaftlicher Einstieg", "Unmittelbarer Beginn", "Überschrift mit Zitat"],
+    correctAnswer: 2,
+    explanation: "Kurzgeschichten beginnen oft mitten im Geschehen (in medias res)."
+  },
+  {
+    id: 47,
+    text: "Was ist ein typisches Merkmal einer Kurzgeschichte?",
+    subject: "kurzgeschichte",
+    options: ["Viele Figuren", "Knappe Sprache und offenes Ende", "Lange Beschreibungen", "Kapitelstruktur"],
+    correctAnswer: 1,
+    explanation: "Kurzgeschichten sind knapp und haben häufig ein offenes Ende."
+  },
+  {
+    id: 48,
+    text: "Welche Zeitform wird in Kurzgeschichten häufig verwendet?",
+    subject: "kurzgeschichte",
+    options: ["Plusquamperfekt", "Futur I", "Präsens", "Konjunktiv"],
+    correctAnswer: 2,
+    explanation: "Das Präsens wird oft für die unmittelbare Wirkung verwendet."
   }
 ];
