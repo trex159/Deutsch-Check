@@ -31,8 +31,16 @@ function shuffleArray(array) {
  
 // Hole bis zu 15 zufällige Fragen aus allen verfügbaren Themen
 function getRandomQuestions(maxCount = 15) {
-  const count = Math.min(maxCount, questions.length); // Limit to available questions
-  return shuffleArray([...questions]).slice(0, count);
+  const subjects = [...new Set(questions.map(q => q.subject))];
+  const questionsBySubject = subjects.map(subject =>
+    questions.find(q => q.subject === subject)
+  ).filter(Boolean); // Ensure no null values
+
+  const remainingQuestions = shuffleArray(
+    questions.filter(q => !questionsBySubject.includes(q))
+  ).slice(0, maxCount - questionsBySubject.length);
+
+  return shuffleArray([...questionsBySubject, ...remainingQuestions]);
 }
 
 // Formatierter Fachbegriff
@@ -43,7 +51,8 @@ function formatSubjectName(subject) {
     satzebene: "Satzebene",
     textebene: "Textebene",
     fremdwoerter: "Fremdwörter",
-    textsorten: "Textsorten"
+    textsorten: "Textsorten",
+    kurzgeschichte: "Kurzgeschichte"
   };
   return map[subject] || subject.charAt(0).toUpperCase() + subject.slice(1);
 }
@@ -64,7 +73,13 @@ function updateProgress() {
 
 // Frage anzeigen
 function displayQuestion(question) {
+  console.log(`Displaying question ID: ${question.id}`);
+
   const optionLetters = ['A', 'B', 'C', 'D'];
+  const shuffledOptions = shuffleArray(
+    question.options.map((option, index) => ({ text: option, index }))
+  );
+
   quizContainer.innerHTML = `
     <div class="question-card">
       <div class="question-header">
@@ -72,10 +87,10 @@ function displayQuestion(question) {
         <h3 class="question-text">${question.text}</h3>
       </div>
       <div class="options-container">
-        ${question.options.map((option, index) => `
-          <button class="option-button" data-index="${index}">
-            <span class="option-letter">${optionLetters[index]}</span>
-            <span>${option}</span>
+        ${shuffledOptions.map((option, i) => `
+          <button class="option-button" data-original-index="${option.index}">
+            <span class="option-letter">${optionLetters[i]}</span>
+            <span>${option.text}</span>
           </button>
         `).join('')}
       </div>
@@ -83,7 +98,7 @@ function displayQuestion(question) {
   `;
 
   document.querySelectorAll('.option-button').forEach(button => {
-    button.addEventListener('click', () => handleAnswer(parseInt(button.dataset.index)));
+    button.addEventListener('click', () => handleAnswer(parseInt(button.dataset.originalIndex)));
   });
 }
 
@@ -100,9 +115,15 @@ function handleAnswer(selectedIndex) {
   });
 
   const buttons = document.querySelectorAll('.option-button');
-  buttons.forEach(button => button.disabled = true);
-  buttons[selectedIndex].classList.add(isCorrect ? 'correct' : 'incorrect');
-  buttons[question.correctAnswer].classList.add('correct');
+  buttons.forEach(button => {
+    const originalIndex = parseInt(button.dataset.originalIndex);
+    button.disabled = true;
+    if (originalIndex === question.correctAnswer) {
+      button.classList.add('correct');
+    } else if (originalIndex === selectedIndex) {
+      button.classList.add('incorrect');
+    }
+  });
 
   const explanationDiv = document.createElement('div');
   explanationDiv.className = `p-4 mt-4 rounded-lg ${isCorrect ? 'bg-green-50' : 'bg-red-50'}`;
@@ -168,6 +189,7 @@ Ich habe ein Quiz im Fach Deutsch (9. Klasse Realschule Bayern) gemacht. Es ging
 - Satz- und Textebene (z. B. Hauptsatz/Nebensatz, Textaufbau, Rethorische Frage...)
 - Fremdwörter (z. B. Kritik, Ironie, Argumentation...)
 - Textsorten (Kommentar, Reportage)
+- Kurzgeschichte (z. B. Merkmale, Zeitform, Aufbau)
 
 Ich habe ${results.overallScore} von ${results.totalQuestions} Fragen richtig beantwortet (${Math.round((results.overallScore / results.totalQuestions) * 100)}%).
 
